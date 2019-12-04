@@ -7,7 +7,7 @@ ToDo application using Node.js as backend.
 ### Clone the repo
 
 ```
-git clone https://code.qburst.com/arjunsoman/todo-node.git
+git clone https://github.com/arjunksofficial/todo-node.git
 ```
 
 ### Creating the RSA keys
