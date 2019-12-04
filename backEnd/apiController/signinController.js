@@ -11,10 +11,10 @@ module.exports = function(app){
         if (req.body.username !== "arjun") {
             res.status(401).json({message: 'Authentication failed. Invalid user.'});
     
-        } else if (req.body.username === "arjun" && req.body.password !== "qburst") {
+        } else if (req.body.username === "arjun" && req.body.password !== "password") {
             res.status(401).json({message: 'Authentication failed. Wrong password.'});
     
-        } else if (req.body.username==="arjun" && req.body.password==="qburst") {
+        } else if (req.body.username==="arjun" && req.body.password==="password") {
             res.writeHead(201,{'Content-Type':'application/json'});
             var cert = fs.readFileSync(__dirname+'/../keys/private.key');
             var tokenvalue = jwt.sign({foo: 'bar'},cert,{algorithm: 'RS256'},{expiresIn: '1h'});
