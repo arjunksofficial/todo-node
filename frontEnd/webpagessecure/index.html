@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" href="/webpages/styles.css">
+    <script type="text/javascript" src="/webpages/app.js"></script>
+    <script type="text/javascript" src="/webpages/autocomplete.js"></script>
+    <script type="text/javascript" src="/webpages/draganddrop.js"></script>
+    <script type="text/javascript" src="/webpages/login.js"></script>
+
+</head>
+
+<body onload="initializePage()">
+
+    <div id="header">
+        <h1 style="opacity: 1;">TODO APPLICATION</h1>
+    </div>
+    <input type="image" id="logout" onclick="logout()" src="/webpages/logout.png" width="85" height="75">
+    <div id="container">
+            <div class="column" id="todomain" style="background-color:rgba(0,0,0,0.3);">
+                <h2>TODO</h2>
+                <div id= "todo" class="todo" >
+
+                </div>
+
+            </div>
+            <div class="column" id="progressmain" ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color:rgba(0,0,0,0.3);">
+                <h2>IN PROGRESS</h2>
+                <div id= "progress" class="todo" ondrop="drop(event)" ondragover="allowDrop(event)" >
+
+                </div>
+            </div>
+            <div class="column" id="donemain" ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color:rgba(0,0,0,0.3);">
+                <h2>DONE</h2>
+                <div id = "done" class="todo" ondrop="drop(event)" ondragover="allowDrop(event)" >
+
+                </div>
+            </div>
+            <input id="myBtn" type="image" src="/webpages/add.png" alt="Submit" width="75" height="75">
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Create your task</h2>
+            </div>
+            <div class="modal-body">
+                <form id="popupform"  autocomplete="off" >
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="tname" placeholder="Name your task.." maxlength="12" required>
+                    <p id="namecheck" style="color:rgb(255, 0, 0);text-align: left;" ></p>
+
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" placeholder="Describe.." required>
+                    <p id="descriptioncheck" style="color:rgb(255, 0, 0);text-align: left;" ></p>
+
+                    <label for="assignee">Assignee</label>
+                    <div class="autocomplete">
+                        <input type="text" id="assignee" name="assignee" placeholder="Who does this task.." required>
+                    </div>
+                   
+                    <p id="assigneecheck" style="color:rgb(255, 0, 0);text-align: left;" ></p>
+
+                    <label for="priority">Priority</label>
+                    <input type="number" id="priority" name="priority" placeholder="4" min="1" required>
+                    <p id="prioritycheck" style="color:rgb(255, 0, 0);text-align: left;" ></p>      
+
+                    <input type="button" value="Submit" onclick="createNewTask()">
+
+                    <p id="modalcreation" style="color:rgb(7, 145, 7);text-align: center" ></p>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+    <div id="viewTaskModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class= "closeview" id="closeview">&times;</span>
+                <h2>Task</h2>
+            </div>
+            <div class="modal-body">
+                Details
+            </div>
+        </div>
+    
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    color: antiquewhite;
+    border-style: groove;
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 520px;  /* Should be removed. Only for demonstration */
+}
+
+/* For desktop: */
+
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="column"] {
+        width: 100%;
+    }
+    
+    #myBtn {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+    #logout {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* For ToDo Area*/
+.todo {
+    overflow-y: scroll;
+    color: antiquewhite;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    height: 430px;  /* Should be removed. Only for demonstration */
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div {
+    border-radius: 25px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+body {
+    background-color: rgb(255, 255, 255);
+    background-image: url("bgimage.jpg");
+    background-repeat: no-repeat;
+}
+
+div.task {
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    float: left;
+    border: 1px;
+    height: 90px;
+    width: 100%;
+    border-style: solid;
+    color: rgb(31, 1, 139);
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+div.task button {
+    font-size: 25px;
+    float: right;
+    border-radius: 5px;
+}
+
+.incr {
+    text-align: right;
+    color: rgb(0, 11, 107);
+    background-color: rgb(255, 255, 255);
+}
+.decr {
+    text-align: right;
+    color: rgb(0, 11, 107);
+    background-color: rgb(255, 255, 255);
+}
+.mov {
+    text-align: right;
+    color: rgb(0, 11, 107);
+    background-color: rgb(255, 255, 255);
+}
+.view {
+    text-align: right;
+    color: rgb(0, 11, 107);
+    background-color: rgb(255, 255, 255);
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    border-radius: 25px;
+    padding: 0;
+    border: 0px;
+    font-size: 150%;
+    color: rgb(7, 0, 109);
+    text-align: center;
+    background: rgba(4, 78, 161, 0.2);
+    
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* The close button for View Task */
+
+.closeview {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeview:hover,
+.closeview:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.modal-header {
+    padding: 2px 16px;
+    background-color:  rgb(0, 24, 92);
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=button] {
+    width: 100%;
+    background-color: rgb(0, 24, 92);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* For Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+} 
+
+
+#myBtn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+}
+
+#logout {
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+/* Autocomplete Styles */
+
+* { box-sizing: border-box; }
+body {
+  font: 16px Arial;
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+}
+input {
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}

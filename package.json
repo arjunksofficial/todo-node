@@ -1,0 +1,23 @@
+{
+  "name": "todo-node",
+  "version": "1.0.0",
+  "description": "ToDo application using Node.js as backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.qburst.com:arjunsoman/todo-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.0",
+    "jsonwebtoken": "^8.3.0",
+    "mysql": "^2.16.0"
+  }
+}
